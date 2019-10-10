@@ -112,7 +112,7 @@ public class Setup extends HttpServlet {
 							.append("Start_year",2014);
 		collection1.insertOne(doc);
 
-		/*subjectresult collection2- contains 27 entries - 3 for each result */
+		/*subjectresult collection2- contains 27 entries - 3 for each result entry in result collection*/
 		MongoCollection<Document> collection2= database.getCollection("subjectresult");
 		doc = new Document("Course_id","abc1")
 							.append("_id",1)
