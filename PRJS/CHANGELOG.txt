@@ -1,0 +1,13 @@
+----------------------------------------------------------
+----------------- CHANGELOG FOR PROJECT ------------------
+----------------------------------------------------------
+##########################################################
+
+Date: 11-10-2019
+User: 1nF0rmed
+
+Change:Added Section ("sec") to Result
+Purpose: As students sometimes change sections and diploma students also change sections. Instead of tracking section in "Student", it would be easier to track
+		 section through Result.
+		 
+##########################################################

@@ -65,13 +65,17 @@ public class Main extends HttpServlet {
 		
 		mongoClient = new MongoClient("localhost", 27017);
 		MongoDatabase database = mongoClient.getDatabase("test");
-		MongoCollection<Document> collection = database.getCollection("students");
+		MongoCollection<Document> collection = database.getCollection("student");
 		
 		// Filter doc and only select document where USN is equal to given
 		Document selected_doc = collection.find(eq("USN", USN)).first();
 		
-		out.println(selected_doc.get("Courses"));
+		out.println(selected_doc.toJson());
 		
+		DatabaseInterface diObj = new DatabaseInterface();
+		diObj.getInfo(USN);
+		diObj.getCourses(USN);
+		diObj.getResults(USN);
 		
 		
 	}

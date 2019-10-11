@@ -20,6 +20,12 @@
   	<description></description>
   	<servlet-class>backend.servlet.Setup</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ResultAnalysis</servlet-name>
+  	<display-name>ResultAnalysis</display-name>
+  	<description></description>
+  	<servlet-class>backend.servlet.ResultAnalysis</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
   	<url-pattern>/Main</url-pattern>
@@ -27,5 +33,9 @@
   <servlet-mapping>
   	<servlet-name>Setup</servlet-name>
   	<url-pattern>/Setup</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ResultAnalysis</servlet-name>
+  	<url-pattern>/ResultAnalysis</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -283,7 +283,8 @@ public class Setup extends HttpServlet {
 		MongoCollection<Document> collection3= database.getCollection("result");
 		doc = new Document("_id",1)
 							.append("Sem",5)
-							.append("Year",3)
+							.append("Year",2019)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(1,2,3))
 							.append("Sgpa",9.6)
 							.append("Cgpa",9.4);
@@ -291,21 +292,24 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",2)
 							.append("Sem",5)
-							.append("year",3)
+							.append("year",2019)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(4,5,6))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
 		doc=new Document("_id",3)
 							.append("Sem",5)
-							.append("year",3)
+							.append("year",2019)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(7,8,9))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
 		doc = new Document("_id",4)
 							.append("Sem",3)
-							.append("Year",2)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(10,11,12))
 							.append("Sgpa",9.6)
 							.append("Cgpa",9.4);
@@ -313,21 +317,24 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",5)
 							.append("Sem",3)
-							.append("year",2)
+							.append("year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(13,14,15))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
 		doc=new Document("_id",6)
 							.append("Sem",3)
-							.append("year",2)
+							.append("year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(16,17,18))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
 		doc = new Document("_id",7)
 							.append("Sem",4)
-							.append("Year",2)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(19,20,21))
 							.append("Sgpa",9.6)
 							.append("Cgpa",9.4);
@@ -335,14 +342,16 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",8)
 							.append("Sem",4)
-							.append("year",2)
+							.append("year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(22,23,24))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
 		doc=new Document("_id",9)
 							.append("Sem",4)
-							.append("year",2)
+							.append("year",2018)
+							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(25,26,27))
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
