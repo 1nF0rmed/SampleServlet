@@ -50,6 +50,12 @@
   	<description></description>
   	<servlet-class>backend.servlet.pullUSNResult</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>pullUSNResult_1</servlet-name>
+  	<display-name>pullUSNResult_1</display-name>
+  	<description></description>
+  	<servlet-class>backend.servlet.pullUSNResult_1</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
   	<url-pattern>/Main</url-pattern>
@@ -77,5 +83,9 @@
   <servlet-mapping>
   	<servlet-name>pullUSNResult</servlet-name>
   	<url-pattern>/pullUSNResult</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>pullUSNResult_1</servlet-name>
+  	<url-pattern>/pullUSNResult_1</url-pattern>
   </servlet-mapping>
 </web-app>
