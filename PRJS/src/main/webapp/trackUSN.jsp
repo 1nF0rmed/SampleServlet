@@ -18,7 +18,12 @@
 			 success: function(resp) {
 				 //resp = $.parseJSON(resp);
 				 var text = "";
-				 for(var i=0;i<resp.length;i++){
+				 
+				 text = text.concat("NAME: "+ resp[0].NAME + "<br/>");
+				 text = text.concat("USN: "+ resp[0].USN+"<br/>");
+				 text = text.concat("OVERALL CGPA: "+ resp[0].OVERALLCGPA +"<br/><br/><br/>");
+				 
+				 for(var i=1;i<resp.length;i++){
 					 text = text.concat("SEMESTER: "+ resp[i].SEMESTER + "<br/>");
 					 text = text.concat("YEAR: "+ resp[i].YEAR+"<br/>");
 					 text = text.concat("COURSES TAKEN: "+ resp[i].COURSESTAKEN +"<br/>");
@@ -27,7 +32,6 @@
 					 
 				 }
 				 
-				 alert(text);
 				 
 				 $("#response").html(text);
 				 }
