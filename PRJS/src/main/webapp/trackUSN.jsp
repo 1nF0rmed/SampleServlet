@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Track USN</title>
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
 <script>
  $(document).ready(function(){
@@ -17,7 +17,19 @@
 			 },
 			 success: function(resp) {
 				 //resp = $.parseJSON(resp);
-				 $("#response").html("<br>SEMESTER: "+resp[0].SEMESTER + "<br>YEAR: "+resp[0].YEAR+"<br>COURSES TAKEN: "+resp[0].COURSESTAKEN+"<br>CGPA: "+resp[0].SGPA+"<br>SGPA: "+resp[0].CGPA);
+				 var text = "";
+				 for(var i=0;i<resp.length;i++){
+					 text = text.concat("SEMESTER: "+ resp[i].SEMESTER + "<br/>");
+					 text = text.concat("YEAR: "+ resp[i].YEAR+"<br/>");
+					 text = text.concat("COURSES TAKEN: "+ resp[i].COURSESTAKEN +"<br/>");
+					 text = text.concat("SGPA: "+ resp[i].SGPA + "<br/>");
+					 text = text.concat("CGPA: "+ resp[i].CGPA +"<br/><br/>");
+					 
+				 }
+				 
+				 alert(text);
+				 
+				 $("#response").html(text);
 				 }
 		 });
 	 });

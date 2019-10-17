@@ -85,13 +85,14 @@ public class pullUSNResult extends HttpServlet {
 		JSONArray record= new JSONArray(); 
 		
 		for(Object i:list){
+			System.out.println("MAIN: "+Integer.parseInt(i.toString()));
 			Document result_reco= collection3.find(eq("_id",Integer.parseInt(i.toString()))).first();
 			
 			try {
 				semresult.put("SEMESTER",result_reco.get("Sem").toString());
 				semresult.put("YEAR", result_reco.get("Year").toString());
 			} catch(Exception e) {
-				System.out.println("Exception: "+e);
+				System.out.println("Exception #1: "+e);
 			}
 			
 			
@@ -109,7 +110,7 @@ public class pullUSNResult extends HttpServlet {
 				semresult.put("SGPA",(result_reco.get("Sgpa")).toString());
 				semresult.put("CGPA",result_reco.get("Cgpa").toString());
 			} catch(Exception e) {
-				System.out.println("Exception: "+e);
+				System.out.println("Exception #2: "+e);
 			}
 			record.put(semresult);
 			semresult= new JSONObject();

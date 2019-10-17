@@ -292,7 +292,7 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",2)
 							.append("Sem",5)
-							.append("year",2019)
+							.append("Year",2019)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(4,5,6))
 							.append("Sgpa",9.3)
@@ -300,7 +300,7 @@ public class Setup extends HttpServlet {
 		collection3.insertOne(doc);
 		doc=new Document("_id",3)
 							.append("Sem",5)
-							.append("year",2019)
+							.append("Year",2019)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(7,8,9))
 							.append("Sgpa",9.3)
@@ -317,7 +317,7 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",5)
 							.append("Sem",3)
-							.append("year",2018)
+							.append("Year",2018)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(13,14,15))
 							.append("Sgpa",9.3)
@@ -325,7 +325,7 @@ public class Setup extends HttpServlet {
 		collection3.insertOne(doc);
 		doc=new Document("_id",6)
 							.append("Sem",3)
-							.append("year",2018)
+							.append("Year",2018)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(16,17,18))
 							.append("Sgpa",9.3)
@@ -342,7 +342,7 @@ public class Setup extends HttpServlet {
 
 		doc=new Document("_id",8)
 							.append("Sem",4)
-							.append("year",2018)
+							.append("Year",2018)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(22,23,24))
 							.append("Sgpa",9.3)
@@ -350,7 +350,7 @@ public class Setup extends HttpServlet {
 		collection3.insertOne(doc);
 		doc=new Document("_id",9)
 							.append("Sem",4)
-							.append("year",2018)
+							.append("Year",2018)
 							.append("Sec", "B")								// UPDATE
 							.append("Subjectresult_id",Arrays.asList(25,26,27))
 							.append("Sgpa",9.3)
