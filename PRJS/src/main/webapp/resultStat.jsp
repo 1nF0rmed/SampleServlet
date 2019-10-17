@@ -31,6 +31,24 @@
                  }
                 }
 		    });
+            
+            // Handle year select event
+            $("#year").change(function(){
+            	$.ajax({
+       			 url: 'ResultAnalysis',
+       			 type: 'GET',
+       			 data: {
+       				 'type':'sem',
+       				 'year':parseInt($("#year").val())
+       			 },
+       			 success: function(resp) {
+                        resp = $.parseJSON(resp);
+                        for(var i=0;i<resp.length;i++) {
+                            $("#sem").append("<option value=\""+resp[i]+"\">"+resp[i]+"</option>");
+                        }
+                       }
+       		    });
+            });
         });
     </script>
 </body>
