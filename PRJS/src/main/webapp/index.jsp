@@ -38,10 +38,10 @@
                         <label for="password">Password</label>
                 </div>
                 <div class="input-field col s6">
-                    <a class="waves-effect waves-light btn login">Login</a>
+                    <a class="waves-effect waves-light btn login" href="dashboard.jsp">Login</a>
                 </div>
                 <div class="input-field col s6">
-                        <a href="resetPassword">Forgot Password?</a>
+                        <a href="resetPassword.jsp">Forgot Password?</a>
                 </div>
                 <div class="input-field col s6">
                         <a href="trackSemester.jsp">Are you a <b>Student?</b></a>
