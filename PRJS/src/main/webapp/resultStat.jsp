@@ -103,7 +103,7 @@
          			type: 'POST',
          			data: {
          				'sem': parseInt($("#sem").val()),
-         				'year': parseInt($("#year").val(),
+         				'year': parseInt($("#year").val()),
          				'sec': $("#section").val(),
          				'sub': $("#subject").val()
          			},

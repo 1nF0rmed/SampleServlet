@@ -182,9 +182,15 @@ public class ResultAnalysis extends HttpServlet {
 		int year = Integer.parseInt(request.getParameter("year"));
 		int semester = Integer.parseInt(request.getParameter("sem"));
 		
+		mongoClient = new MongoClient("localhost", 27017);
+		MongoDatabase database = mongoClient.getDatabase("test");
+		MongoCollection<Document> subResultCollection = database.getCollection("subjectresult");
+		
 		DatabaseInterface dbi = new DatabaseInterface();
 		// Get the subject code for the subject
 		String course_code = dbi.getCourseCode(subject);
+		
+		System.out.println("[LOG] Course Code: "+course_code);
 		
 		if(course_code.equals("0")) { // If no such course code is found
 			response.getWriter().println("Invalid Subject Selected.");
@@ -200,7 +206,23 @@ public class ResultAnalysis extends HttpServlet {
 			return;
 		}
 		
+		System.out.println("[LOG] ResultList size: "+resultsList.size());
+		
 		// Extract subjectresult from the result list that corresponds to the course_code
+		for(Document doc:resultsList) {
+			List<Integer> subjectResult_ids = doc.getList("Subjectresult_id", Integer.class);
+			
+			// Loop through each subjectresult_id and check if related to course_code
+			for(int sub_id:subjectResult_ids) {
+				
+				// Get the document if related to course_id
+				Document sub_doc = subResultCollection.find(eq("_id", sub_id)).first();
+				
+				if(sub_doc.getString("Course_id").equals(course_code))
+					System.out.println("[LOG] Result: "+sub_doc.getString("Grade"));
+				
+			}
+		}
 	}
 
 }
