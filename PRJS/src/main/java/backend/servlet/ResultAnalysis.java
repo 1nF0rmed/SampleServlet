@@ -18,6 +18,8 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 
 import java.util.Arrays;
+import java.util.HashMap;
+
 import com.mongodb.Block;
 
 import com.mongodb.client.MongoCursor;
@@ -29,6 +31,8 @@ import com.mongodb.session.ClientSession;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -208,6 +212,15 @@ public class ResultAnalysis extends HttpServlet {
 		
 		System.out.println("[LOG] ResultList size: "+resultsList.size());
 		
+		// Variable to store the frequency of grades
+		HashMap<String, Integer> freq = new HashMap<String, Integer>();
+		String grades[] = {"S", "A", "B", "C", "D", "E", "F"};
+		
+		// Setup the map
+		for(String grade:grades) {
+			freq.put(grade, 0);
+		}
+		
 		// Extract subjectresult from the result list that corresponds to the course_code
 		for(Document doc:resultsList) {
 			List<Integer> subjectResult_ids = doc.getList("Subjectresult_id", Integer.class);
@@ -218,11 +231,20 @@ public class ResultAnalysis extends HttpServlet {
 				// Get the document if related to course_id
 				Document sub_doc = subResultCollection.find(eq("_id", sub_id)).first();
 				
-				if(sub_doc.getString("Course_id").equals(course_code))
-					System.out.println("[LOG] Result: "+sub_doc.getString("Grade"));
+				if(sub_doc.getString("Course_id").equals(course_code)) {
+					String grade = sub_doc.getString("Grade");
+					freq.replace(grade, freq.get(grade)+1);
+				}
 				
 			}
 		}
+		
+		// Return the frequency in the format of JSON
+		System.out.println(freq);
+		
+		JSONObject freqJSON = new JSONObject(freq);
+		
+		response.getWriter().println(freqJSON.toString());
 	}
 
 }
