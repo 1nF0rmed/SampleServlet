@@ -14,6 +14,8 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
+
 import java.util.Arrays;
 
 import com.mongodb.BasicDBList;
@@ -49,6 +51,38 @@ public class DatabaseInterface {
 			Document course_reco= collection1.find(eq("_id",i.toString())).first();
 			System.out.println(course_reco.get("Course_name"));
 		}
+	}
+	
+	public String getCourseCode(String Name) {
+		MongoDatabase database = mongoClient.getDatabase("test");
+		MongoCollection<Document> courseCollection = database.getCollection("course");
+		
+		Document selected_doc= courseCollection.find(eq("Course_name",Name)).first();
+		
+		// If a document was found
+		if(selected_doc != null) {
+			return selected_doc.getString("_id");
+		}
+		return "0"; // If not found.
+	}
+	
+	public ArrayList<Document> getResults(String sec, int year, int sem) {
+		MongoDatabase database = mongoClient.getDatabase("test");
+		MongoCollection<Document> resultCollection = database.getCollection("result");
+		
+		// filter
+		Bson filter = and(eq("Sec", sec), eq("Sem", sem), eq("Year", year));
+		
+		// An array to store all the documents
+		ArrayList<Document> filteredResultsArray = new ArrayList();
+		
+		// Loop through filtered documents and add to array
+		for(Document doc:resultCollection.find(filter)) {
+			filteredResultsArray.add(doc);
+		}
+		
+		// return the filtered result array
+		return filteredResultsArray;
 	}
 
 	protected void getResults(String USN){

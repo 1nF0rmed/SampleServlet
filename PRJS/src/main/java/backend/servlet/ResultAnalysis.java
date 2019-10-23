@@ -112,14 +112,95 @@ public class ResultAnalysis extends HttpServlet {
 			response.getWriter().println(record);
 		}
 		
+		// Handles the request for section
+		else if(type.equals("section")) {
+			//
+			// INFO: Get distinct sem values
+			// REQ: Year value
+			//
+			int year = Integer.parseInt(request.getParameter("year"));
+			int semester = Integer.parseInt(request.getParameter("sem"));
+			
+			JSONArray record= new JSONArray(); 
+			
+			MongoDatabase database = mongoClient.getDatabase("test");
+			MongoCollection<Document> resultCollection = database.getCollection("result");
+			
+			Bson filter = and(eq("Year", year), eq("Sem", semester));
+			
+			DistinctIterable<String> resultSet = resultCollection.distinct("Sec", filter, String.class);
+			
+			System.out.println("[LOG] TYPE: Section, Getting data");
+			for(String sec:resultSet) {
+				record.put(sec);
+				
+				System.out.println("Sec: "+sec);
+			}
+			
+			response.getWriter().println(record);
+		}
+		
+		// Handles the request for section
+		else if(type.equals("subject")) {
+		//
+		// INFO: Get distinct sem values
+		// REQ: Year value
+		//
+		int semester = Integer.parseInt(request.getParameter("sem"));
+		
+		JSONArray record= new JSONArray(); 
+					
+		MongoDatabase database = mongoClient.getDatabase("test");
+		MongoCollection<Document> resultCollection = database.getCollection("course");
+					
+		Bson filter = eq("Sem", semester);
+					
+		DistinctIterable<String> resultSet = resultCollection.distinct("Course_name", filter, String.class);
+					
+		System.out.println("[LOG] TYPE: Course, Getting data");
+		for(String sec:resultSet) {
+			record.put(sec);
+						
+			System.out.println("Course: "+sec);
+		}
+					
+		response.getWriter().println(record);
+		}
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//
+		// Handle analysis of request data
+		//
+		// Get request data
+		String subject = request.getParameter("sub");
+		String section = request.getParameter("sec");
+		int year = Integer.parseInt(request.getParameter("year"));
+		int semester = Integer.parseInt(request.getParameter("sem"));
+		
+		DatabaseInterface dbi = new DatabaseInterface();
+		// Get the subject code for the subject
+		String course_code = dbi.getCourseCode(subject);
+		
+		if(course_code.equals("0")) { // If no such course code is found
+			response.getWriter().println("Invalid Subject Selected.");
+			return;
+		}
+		
+		// Get result documents for sec,year, sem
+		ArrayList<Document> resultsList = dbi.getResults(section, year, semester);
+		
+		// Check if no results were found
+		if(resultsList.size()==0) {
+			response.getWriter().println("No results found.");
+			return;
+		}
+		
+		// Extract subjectresult from the result list that corresponds to the course_code
 	}
 
 }
