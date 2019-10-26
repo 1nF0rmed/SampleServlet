@@ -28,10 +28,10 @@
 <body>
     <div class="container">
         <div class="content">
-                <h2>Faculty Login</h2>
+                <h2>User Login</h2>
                 <div class="input-field col s6">
                     <input id="faculty_id" type="text" class="validate">
-                    <label for="faculty_id">Faculty ID</label>
+                    <label for="faculty_id">User ID</label>
                 </div>
                 <div class="input-field col s6">
                         <input id="password" type="password" class="validate">
