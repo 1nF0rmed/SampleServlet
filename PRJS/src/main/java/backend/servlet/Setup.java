@@ -386,6 +386,23 @@ public class Setup extends HttpServlet {
 							.append("Result_id",Arrays.asList(3,6,9))
 							.append("Cgpa",9.4);
 		collection4.insertOne(doc);
+		
+		/**/
+		MongoCollection<Document> facultyCollection= database.getCollection("faculty");
+		doc = new Document("_id","faculty_IS_01")
+							.append("Name","Dr. Professor 1")
+							.append("Password", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08");
+		facultyCollection.insertOne(doc);
+		
+		doc = new Document("_id","faculty_IS_02")
+							.append("Name","Dr. Professor 2")
+							.append("Password", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08");
+		facultyCollection.insertOne(doc);
+		
+		doc = new Document("_id","faculty_IS_03")
+							.append("Name","Dr. Professor 3")
+							.append("Password", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08");
+		facultyCollection.insertOne(doc);
         
 		response.getWriter().println("Setup Complete.");
 		

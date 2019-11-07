@@ -9,6 +9,11 @@
     <script src="js/materialize.min.js"></script>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">Logout</a>
+    </div>
+  </nav>
 	<div class="container">
         <div class="content">
                 <h2>Faculty: test_user</h2>
