@@ -111,8 +111,39 @@ public class Setup extends HttpServlet {
 							.append("Sem",4)
 							.append("Start_year",2014);
 		collection1.insertOne(doc);
+	/*
+		doc=new Document("_id","abc10")
+					.append("Course_name","COES")
+					.append("Sem",5)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);
+		doc=new Document("_id","abc11")
+					.append("Course_name","C++")
+					.append("Sem",5)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);
+		doc=new Document("_id","abc12")
+					.append("Course_name","LINEAR ALGEBRA")
+					.append("Sem",3)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);
+		doc=new Document("_id","abc13")
+					.append("Course_name","PSQ")
+					.append("Sem",3)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);
+		doc=new Document("_id","abc14")
+					.append("Course_name","DCN")
+					.append("Sem",3)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);
+		doc=new Document("_id","abc15")
+					.append("Course_name","WP")
+					.append("Sem",4)
+					.append("Start_year",2014);
+		collection1.insertOne(doc);   */
 
-		/*subjectresult collection2- contains 27 entries - 3 for each result entry in result collection*/
+		/*subjectresult collection2- contains 54 entries - 3 for each result entry in result collection*/
 		MongoCollection<Document> collection2= database.getCollection("subjectresult");
 		doc = new Document("Course_id","abc1")
 							.append("_id",1)
@@ -277,9 +308,174 @@ public class Setup extends HttpServlet {
 							.append("See",65)
 							.append("Grade","B");
 		collection2.insertOne(doc);
+		
+		//new data
+		doc = new Document("Course_id","abc1")
+							.append("_id",28)
+							.append("Cie",45)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc2")
+							.append("_id",29)
+							.append("Cie",34)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc3")
+							.append("_id",30)
+							.append("Cie",48)
+							.append("See",98)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc1")
+							.append("_id",31)
+							.append("Cie",48)
+							.append("See",91)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc2")
+							.append("_id",32)
+							.append("Cie",30)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc3")
+							.append("_id",33)
+							.append("Cie",41)
+							.append("See",90)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc1")
+							.append("_id",34)
+							.append("Cie",46)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc2")
+							.append("_id",35)
+							.append("Cie",34)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc3")
+							.append("_id",36)
+							.append("Cie",35)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc4")
+							.append("_id",37)
+							.append("Cie",45)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc5")
+							.append("_id",38)
+							.append("Cie",34)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc6")
+							.append("_id",39)
+							.append("Cie",48)
+							.append("See",98)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc4")
+							.append("_id",40)
+							.append("Cie",48)
+							.append("See",91)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc5")
+							.append("_id",41)
+							.append("Cie",30)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc6")
+							.append("_id",42)
+							.append("Cie",41)
+							.append("See",90)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc4")
+							.append("_id",43)
+							.append("Cie",46)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc5")
+							.append("_id",44)
+							.append("Cie",34)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc6")
+							.append("_id",45)
+							.append("Cie",35)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
+
+		doc = new Document("Course_id","abc7")
+							.append("_id",46)
+							.append("Cie",45)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc8")
+							.append("_id",47)
+							.append("Cie",34)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc9")
+							.append("_id",48)
+							.append("Cie",48)
+							.append("See",98)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc7")
+							.append("_id",49)
+							.append("Cie",48)
+							.append("See",91)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc8")
+							.append("_id",50)
+							.append("Cie",30)
+							.append("See",78)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc9")
+							.append("_id",51)
+							.append("Cie",41)
+							.append("See",90)
+							.append("Grade","A");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc7")
+							.append("_id",52)
+							.append("Cie",46)
+							.append("See",94)
+							.append("Grade","S");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc8")
+							.append("_id",53)
+							.append("Cie",34)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
+		doc = new Document("Course_id","abc9")
+							.append("_id",54)
+							.append("Cie",35)
+							.append("See",65)
+							.append("Grade","B");
+		collection2.insertOne(doc);
 
 
-		/*result collection3- contains 9 entries- 3 for each student*/
+		/*result collection3- contains 18 entries- 3 for each student*/
 		MongoCollection<Document> collection3= database.getCollection("result");
 		doc = new Document("_id",1)
 							.append("Sem",5)
@@ -356,6 +552,82 @@ public class Setup extends HttpServlet {
 							.append("Sgpa",9.3)
 							.append("Cgpa",9.1);
 		collection3.insertOne(doc);
+		//new 
+		doc = new Document("_id",10)
+							.append("Sem",5)
+							.append("Year",2019)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(28,29,30))
+							.append("Sgpa",9.6)
+							.append("Cgpa",9.4);
+		collection3.insertOne(doc);
+
+		doc=new Document("_id",11)
+							.append("Sem",5)
+							.append("Year",2019)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(31,32,33))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
+		doc=new Document("_id",12)
+							.append("Sem",5)
+							.append("Year",2019)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(34,35,36))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
+		doc = new Document("_id",13)
+							.append("Sem",3)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(37,38,39))
+							.append("Sgpa",9.6)
+							.append("Cgpa",9.4);
+		collection3.insertOne(doc);
+
+		doc=new Document("_id",14)
+							.append("Sem",3)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(40,41,42))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
+		doc=new Document("_id",15)
+							.append("Sem",3)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(43,44,45))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
+		doc = new Document("_id",16)
+							.append("Sem",4)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(46,47,48))
+							.append("Sgpa",9.6)
+							.append("Cgpa",9.4);
+		collection3.insertOne(doc);
+
+		doc=new Document("_id",17)
+							.append("Sem",4)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(49,50,51))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
+		doc=new Document("_id",18)
+							.append("Sem",4)
+							.append("Year",2018)
+							.append("Sec", "B")								// UPDATE
+							.append("Subjectresult_id",Arrays.asList(52,53,54))
+							.append("Sgpa",9.3)
+							.append("Cgpa",9.1);
+		collection3.insertOne(doc);
 
 
 		/*student collection4 - contains info for 3 students- each has 3,4,5 sem result included references*/
@@ -384,6 +656,33 @@ public class Setup extends HttpServlet {
 							.append("Sec","B")
 							.append("Course_id",Arrays.asList("abc1","abc2","abc3"))
 							.append("Result_id",Arrays.asList(3,6,9))
+							.append("Cgpa",9.4);
+		collection4.insertOne(doc);
+		
+		doc = new Document("USN","1BM17IS089")
+							.append("Name","Rohan Dave")
+							.append("Sem",5)
+							.append("Sec","B")
+							.append("Course_id",Arrays.asList("abc1","abc2","abc3"))
+							.append("Result_id",Arrays.asList(10,13,16))
+							.append("Cgpa",9.4);
+		collection4.insertOne(doc);
+
+		doc = new Document("USN","1BM17IS090")
+							.append("Name","Roopa Maruti Shet")
+							.append("Sem",5)
+							.append("Sec","B")
+							.append("Course_id",Arrays.asList("abc1","abc2","abc3"))
+							.append("Result_id",Arrays.asList(11,14,17))
+							.append("Cgpa",9.4);
+		collection4.insertOne(doc);
+
+		doc = new Document("USN","1BM17IS091")
+							.append("Name","Vipin Bharadwaj")
+							.append("Sem",5)
+							.append("Sec","B")
+							.append("Course_id",Arrays.asList("abc1","abc2","abc3"))
+							.append("Result_id",Arrays.asList(12,15,18))
 							.append("Cgpa",9.4);
 		collection4.insertOne(doc);
 		
