@@ -69,10 +69,48 @@ span.psw {
   }
 }
 </style>
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<script>
+ $(document).ready(function(){
+	 $("#getData").click(function() {
+		 $.ajax({
+			 url: 'pullUSNResult_1',
+			 type: 'POST',
+			 data: {
+				 'USN':$("#USN").val()
+			 },
+			 success: function(resp) {
+				 //resp = $.parseJSON(resp);
+				 var text = "";
+				 
+				 text = text.concat("NAME: "+ resp[0].NAME + "<br/>");
+				 text = text.concat("USN: "+ resp[0].USN+"<br/>");
+				 text = text.concat("OVERALL CGPA: "+ resp[0].OVERALLCGPA +"<br/><br/><br/>");
+				 
+				 for(var i=1;i<resp.length;i++){
+					 text = text.concat("SEMESTER: "+ resp[i].SEMESTER + "<br/>");
+					 text = text.concat("YEAR: "+ resp[i].YEAR+"<br/>"); 
+					 //text = text.concat("COURSESTAKEN: "+ resp[i].COURSESTAKEN +"<br/>"); 
+					 var list= resp[i].COURSESTAKEN;
+					 for(var j=0;j<list.length;j+=4){
+						 text= text.concat("<br/>COURSE: "+ list[j] + ",  CIE: "+ list[j+1] +",  SEE: "+ list[j+2]+ ",  GRADE: "+ list[j+3]+ "<br/><br/>");
+					 }
+					 text = text.concat("SGPA: "+ resp[i].SGPA + "<br/>");
+					 text = text.concat("CGPA: "+ resp[i].CGPA +"<br/><br/>");
+					 
+				 }
+				 
+				 
+				 $("#response").html(text);
+				 }
+		 });
+	 });
+ });
+</script>
 </head>
 <body style="background-image: url('img_cctv.png'); background-size: 1403px 935px; padding:2px;">
 
-<form action="/action_page.php" method="post">
+<div>
   <div class="imgcontainer">
   
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -88,15 +126,15 @@ span.psw {
     <input type="text" placeholder="Your Name" name="uname" required><br>
 
     <label for="usn"><b></b></label>
-    <input type="text" placeholder="USN" align="centre" name="usn" required><br><br>
-    <button type="submit">GET RESULTS</button><br>
+    <input type="text" placeholder="USN" align="centre" name="usn" id="USN" required><br><br>
+    <button type="submit" id="getData">GET RESULTS</button><br>
    
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+  <div class="container" style="background-color:#f1f1f1" id="response">
     
   </div>
-</form>
+</div>
 
 </body>
 </html>
