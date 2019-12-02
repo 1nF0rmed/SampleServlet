@@ -52,7 +52,7 @@
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="dashboard.jsp">
                       Dashboard
                     </a>
               
@@ -62,15 +62,15 @@
                       </a>
               
                       <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="trackUSN.jsp">
                           Track USN
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="#">
                           Result Analysis
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="#">
                           Report an issue
                         </a>
                       </div>
@@ -80,7 +80,7 @@
                   <div class="navbar-end">
                     <div class="navbar-item">
                       <div class="buttons">
-                        <a class="button is-link">
+                        <a class="button is-link" href="index.jsp">
                           <strong>LOG OUT</strong>
                         </a>
                       </div>
@@ -145,7 +145,15 @@
                         <div id="b2" class="column is-half">
 							<canvas id="chart" ></canvas>
 						</div>
-                    </div>
+					</div>
+					<div id="box" class="columns is-centered">
+						<div id="b3" class="column is-half">
+							<canvas id="chart3" ></canvas>
+						</div>
+						<div id="b4" class="column is-half">
+							<canvas id="chart4" ></canvas>
+						</div>
+					</div>
             </div>
     </section>
     <script>
@@ -204,6 +212,102 @@
     		
     		var myPieChart = new Chart(ctx, {
     		    type: 'pie',
+    		    data: {
+    				labels: ["S", "A", "B", "C", "D", "E", "F"],
+    				datasets: [{
+    					label: "Student grade frequency",
+    					data: [_data["S"], _data["A"], _data["B"], _data["C"], _data["D"], _data["E"], _data["F"]],
+    					backgroundColor: [
+    						'rgba(255, 99, 132, 1)',
+    		                'rgba(54, 162, 235, 1)',
+    		                'rgba(255, 206, 86, 1)',
+    		                'rgba(75, 192, 192, 1)',
+    		                'rgba(153, 102, 255, 1)',
+    		                'rgba(255, 159, 64, 1)',
+    		                'rgba(255, 159, 64, 1)'
+    					],
+    					borderColor: [
+    		                'rgba(255, 99, 132, 1)',
+    		                'rgba(54, 162, 235, 1)',
+    		                'rgba(255, 206, 86, 1)',
+    		                'rgba(75, 192, 192, 1)',
+    		                'rgba(153, 102, 255, 1)',
+    		                'rgba(255, 159, 64, 1)',
+    		                'rgba(255, 159, 64, 1)'
+    		            ],
+    					borderWidth: 1
+    				}]
+    			},
+    		    options: {
+    				responsive: true,
+    				maintainAspectRatio: false,
+    				scales: {
+    					yAxes: [{
+    						ticks: {
+    							beginAtZero: true,
+    							steps:1,
+    							stepValue: 6,
+    							max:10
+    						}
+    					}]
+    				}
+    			}
+    		});
+    	}
+
+		function createPolar(_data) {
+			var ctx = $("#chart4");
+    		
+    		var myPieChart = new Chart(ctx, {
+    		    type: 'polarArea',
+    		    data: {
+    				labels: ["S", "A", "B", "C", "D", "E", "F"],
+    				datasets: [{
+    					label: "Student grade frequency",
+    					data: [_data["S"], _data["A"], _data["B"], _data["C"], _data["D"], _data["E"], _data["F"]],
+    					backgroundColor: [
+    						'rgba(255, 99, 132, 1)',
+    		                'rgba(54, 162, 235, 1)',
+    		                'rgba(255, 206, 86, 1)',
+    		                'rgba(75, 192, 192, 1)',
+    		                'rgba(153, 102, 255, 1)',
+    		                'rgba(255, 159, 64, 1)',
+    		                'rgba(255, 159, 64, 1)'
+    					],
+    					borderColor: [
+    		                'rgba(255, 99, 132, 1)',
+    		                'rgba(54, 162, 235, 1)',
+    		                'rgba(255, 206, 86, 1)',
+    		                'rgba(75, 192, 192, 1)',
+    		                'rgba(153, 102, 255, 1)',
+    		                'rgba(255, 159, 64, 1)',
+    		                'rgba(255, 159, 64, 1)'
+    		            ],
+    					borderWidth: 1
+    				}]
+    			},
+    		    options: {
+    				responsive: true,
+    				maintainAspectRatio: false,
+    				scales: {
+    					yAxes: [{
+    						ticks: {
+    							beginAtZero: true,
+    							steps:1,
+    							stepValue: 6,
+    							max:10
+    						}
+    					}]
+    				}
+    			}
+    		});
+    	}
+
+		function createDN(_data) {
+			var ctx = $("#chart3");
+    		
+    		var myPieChart = new Chart(ctx, {
+    		    type: 'doughnut',
     		    data: {
     				labels: ["S", "A", "B", "C", "D", "E", "F"],
     				datasets: [{
@@ -342,6 +446,8 @@
          				
          				createChart(data);
          				createPie(data);
+						createDN(data);
+						createPolar(data);
          				//document.writeln(data["S"]);
          			}
          		});

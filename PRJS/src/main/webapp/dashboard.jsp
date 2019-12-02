@@ -5,41 +5,111 @@
 <head>
 <meta charset="UTF-8">
 <title>Faculty Dashboard</title>
- <link rel="stylesheet" href="css/materialize.min.css">
-    <script src="js/materialize.min.js"></script>
+<script src="jquery-1.10.2.js"></script>
+<script src="./js/Chart.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/bulma.min.css">
+<link rel="stylesheet" type="text/css" href="./css/Chart.min.css">
+<style>
+	#box {
+		height: 400px;
+	}
+    .navbar {
+        box-shadow: 10px 10px 5px grey;
+        height: 80px;
+    }
+    .navbar-item img {
+        max-height: 4.5rem;
+    }
+</style>
 </head>
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logout</a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" id="img_holder" href="https://bmsce.ac.in">
+        <img src="logo.png">
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">
+          Dashboard
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Other Options
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="trackUSN.jsp">
+              Track USN
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="resultStat.jsp">
+              Result Analysis
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="#">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-link" href="index.jsp">
+              <strong>LOG OUT</strong>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
-	<div class="container">
-        <div class="content">
-                <h2>Faculty: test_user</h2>
-                 <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Track Student USN</span>
-          <p>View a student's track record and see the progress made.</p>
-        </div>
-        <div class="card-action">
-          <a href="trackUSN.jsp">Go here</a>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Analyze Subject Results</span>
-          <p>A graphical distribution of grades by year, semester and section.</p>
-        </div>
-        <div class="card-action">
-          <a href="resultStat.jsp">Go here</a>
+
+
+<section class="section">
+  <p class="title is-4">Faculty: test_professor</p>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="box">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>Track Student USN</p>
+                <p>View a student's track record and see the progress made.</p>
+                <a href="trackUSN.jsp">Go here</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
+      <div class="column">
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>Analyze Subject Results</p>
+                  <p>A graphical distribution of grades by year, semester and section.</p>
+                  <a href="resultStat.jsp">Go here</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
     </div>
+  </div>
+</section>
 </body>
 </html>
