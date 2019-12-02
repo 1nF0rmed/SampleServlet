@@ -50,7 +50,7 @@ public class Main extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		RequestDispatcher view = request.getRequestDispatcher("html/findCourse.html");
-		view.forward(request, response);
+		view.forward(request, response); 
 	}
 
 	/**

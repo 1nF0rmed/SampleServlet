@@ -686,6 +686,36 @@ public class Setup extends HttpServlet {
 							.append("Cgpa",9.4);
 		collection4.insertOne(doc);
 		
+		doc = new Document("USN","1BM17IS099")
+				.append("Name","Viki Sahota")
+				.append("Sem",5)
+				.append("Sec","B");
+		collection4.insertOne(doc);
+		
+		doc = new Document("USN","1BM17IS109")
+				.append("Name","Jimmy Samba")
+				.append("Sem",5)
+				.append("Sec","B");
+		collection4.insertOne(doc);
+		
+		doc = new Document("USN","1BM17IS121")
+				.append("Name","Jenga Mano")
+				.append("Sem",5)
+				.append("Sec","B");
+		collection4.insertOne(doc);
+		
+		doc = new Document("USN","1BM17IS122")
+				.append("Name","Force Man")
+				.append("Sem",5)
+				.append("Sec","B");
+		collection4.insertOne(doc);
+		
+		doc = new Document("USN","1BM17IS123")
+				.append("Name","Samy Dakota")
+				.append("Sem",5)
+				.append("Sec","B");
+		collection4.insertOne(doc);
+		
 		/**/
 		MongoCollection<Document> facultyCollection= database.getCollection("faculty");
 		doc = new Document("_id","faculty_IS_01")

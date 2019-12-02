@@ -56,6 +56,12 @@
   	<description></description>
   	<servlet-class>backend.servlet.pullUSNResult_1</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DataUpload</servlet-name>
+  	<display-name>DataUpload</display-name>
+  	<description></description>
+  	<servlet-class>backend.servlet.DataUpload</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
   	<url-pattern>/Main</url-pattern>
@@ -87,5 +93,9 @@
   <servlet-mapping>
   	<servlet-name>pullUSNResult_1</servlet-name>
   	<url-pattern>/pullUSNResult_1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DataUpload</servlet-name>
+  	<url-pattern>/DataUpload</url-pattern>
   </servlet-mapping>
 </web-app>
