@@ -116,10 +116,13 @@
                             </div>
                               </div>
 
-                              <label class="label">Subject</label>
+                              <label class="label">Service Type</label>
                               <div class="control">
                             <div class="select">
-                                  <select name="subject" id="subject"></select>
+                                  <select name="type" id="type">
+									  <option value="police">Police</option>
+									  <option value="hospital">Hospital</option>
+								  </select>
                             </div>
                               </div>
                         </div>

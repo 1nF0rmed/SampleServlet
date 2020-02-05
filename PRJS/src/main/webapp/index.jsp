@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <a href="dashboard.jsp">
-                            <button class="button is-large is-fullwidth is-link" >LOGIN</button>
+                            <button class="button is-large is-fullwidth is-link login" >LOGIN</button>
                         </a>
                    </div>
                </div>

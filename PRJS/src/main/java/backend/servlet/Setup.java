@@ -689,31 +689,46 @@ public class Setup extends HttpServlet {
 		doc = new Document("USN","1BM17IS099")
 				.append("Name","Viki Sahota")
 				.append("Sem",5)
-				.append("Sec","B");
+				.append("Sec","B")
+				.append("Course_id",Arrays.asList("abc1","abc2","abc3", "abc4", "abc5"))
+				.append("Result_id",Arrays.asList(111))
+				.append("Cgpa",7.9);
 		collection4.insertOne(doc);
 		
 		doc = new Document("USN","1BM17IS109")
 				.append("Name","Jimmy Samba")
 				.append("Sem",5)
-				.append("Sec","B");
+				.append("Sec","B")
+				.append("Course_id",Arrays.asList("abc1","abc2","abc3", "abc4", "abc5"))
+				.append("Result_id",Arrays.asList(111))
+				.append("Cgpa",7.9);
 		collection4.insertOne(doc);
 		
 		doc = new Document("USN","1BM17IS121")
 				.append("Name","Jenga Mano")
 				.append("Sem",5)
-				.append("Sec","B");
+				.append("Sec","B")
+				.append("Course_id",Arrays.asList("abc1","abc2","abc3", "abc4", "abc5"))
+				.append("Result_id",Arrays.asList(111))
+				.append("Cgpa",8.2);
 		collection4.insertOne(doc);
 		
 		doc = new Document("USN","1BM17IS122")
 				.append("Name","Force Man")
 				.append("Sem",5)
-				.append("Sec","B");
+				.append("Sec","B")
+				.append("Course_id",Arrays.asList("abc1","abc2","abc3", "abc4", "abc5"))
+				.append("Result_id",Arrays.asList(111))
+				.append("Cgpa",8.0);
 		collection4.insertOne(doc);
 		
 		doc = new Document("USN","1BM17IS123")
 				.append("Name","Samy Dakota")
 				.append("Sem",5)
-				.append("Sec","B");
+				.append("Sec","B")
+				.append("Course_id",Arrays.asList("abc1","abc2","abc3"))
+				.append("Result_id",Arrays.asList(11,14,17))
+				.append("Cgpa",9.4);
 		collection4.insertOne(doc);
 		
 		/**/

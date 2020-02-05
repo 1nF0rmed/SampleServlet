@@ -70,6 +70,8 @@ span.psw {
 }
 </style>
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/bulma.min.css">
+<link rel="stylesheet" type="text/css" href="./css/Chart.min.css">
 <script>
  $(document).ready(function(){
 	 $("#getData").click(function() {
@@ -83,20 +85,25 @@ span.psw {
 				 //resp = $.parseJSON(resp);
 				 var text = "";
 				 
-				 text = text.concat("NAME: "+ resp[0].NAME + "<br/>");
-				 text = text.concat("USN: "+ resp[0].USN+"<br/>");
-				 text = text.concat("OVERALL CGPA: "+ resp[0].OVERALLCGPA +"<br/><br/><br/>");
+				 $("#student").append("<p><strong>NAME:</strong>"+ resp[0].NAME + "</p>");
+				 $("#student").append("<p><strong>USN:</strong>"+ resp[0].USN+"</p>");
+				 $("#student").append("<p><strong>OVERALL CGPA:</strong>"+ resp[0].OVERALLCGPA +"</p><br/><br/>");
+
+				 text = text.concat("<table><tr><th>COURSE</th><th>CIE</th><th>SEE</th><th>GRADE</th></tr>");
 				 
 				 for(var i=1;i<resp.length;i++){
 					 text = text.concat("SEMESTER: "+ resp[i].SEMESTER + "<br/>");
 					 text = text.concat("YEAR: "+ resp[i].YEAR+"<br/>"); 
 					 //text = text.concat("COURSESTAKEN: "+ resp[i].COURSESTAKEN +"<br/>"); 
 					 var list= resp[i].COURSESTAKEN;
+
 					 for(var j=0;j<list.length;j+=4){
-						 text= text.concat("<br/>COURSE: "+ list[j] + ",  CIE: "+ list[j+1] +",  SEE: "+ list[j+2]+ ",  GRADE: "+ list[j+3]+ "<br/><br/>");
+						 text= text.concat("<tr><td>"+ list[j] + "</td><td>"+ list[j+1] +"</td><td>"+ list[j+2]+ "</td><td>"+ list[j+3]+ "</td></tr>");
 					 }
+					 text = text.concat("</table>");
 					 text = text.concat("SGPA: "+ resp[i].SGPA + "<br/>");
 					 text = text.concat("CGPA: "+ resp[i].CGPA +"<br/><br/>");
+					 break;
 					 
 				 }
 				 
@@ -108,7 +115,7 @@ span.psw {
  });
 </script>
 </head>
-<body style="background-image: url('img_cctv.png'); background-size: 1403px 935px; padding:2px;">
+<body style="background-image: url('img_cctv.png'); background-size: 100%; padding:2px;background-repeat: no-repeat;">
 
 <div>
   <div class="imgcontainer">
@@ -131,9 +138,14 @@ span.psw {
    
   </div>
 
-  <div class="container" style="background-color:#f1f1f1" id="response">
-    
-  </div>
+  <section class="section">
+	  <div class="container">
+		  <div id="student">
+
+		  </div>
+		  <div id="response"></div>
+	  </div>
+  </section>
 </div>
 
 </body>

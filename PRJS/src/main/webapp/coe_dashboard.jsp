@@ -89,7 +89,7 @@
               <div class="content">
                 <p>Upload Result Sheet</p>
                 <p>Upload an Excel sheet that will be updated to the student database.</p>
-                <a href="uploadSheet.jsp">Go here</a>
+                <a href="uploadData.jsp">Go here</a>
               </div>
             </div>
           </article>

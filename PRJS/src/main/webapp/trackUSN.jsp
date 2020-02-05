@@ -19,6 +19,9 @@
 					 'USN':$("#USN").val()
 				 },
 				 success: function(resp) {
+					$("#student").empty();
+					$("#response").empty();
+
 					 //resp = $.parseJSON(resp);
 					 var text = "";
 					 
