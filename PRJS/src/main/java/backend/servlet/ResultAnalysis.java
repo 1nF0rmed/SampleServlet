@@ -117,7 +117,7 @@ public class ResultAnalysis extends HttpServlet {
 		}
 		
 		// Handles the request for section
-		else if(type.equals("section")) {
+		/*else if(type.equals("section")) {
 			//
 			// INFO: Get distinct sem values
 			// REQ: Year value
@@ -142,7 +142,7 @@ public class ResultAnalysis extends HttpServlet {
 			}
 			
 			response.getWriter().println(record);
-		}
+		}*/
 		
 		// Handles the request for section
 		else if(type.equals("subject")) {
@@ -182,7 +182,7 @@ public class ResultAnalysis extends HttpServlet {
 		//
 		// Get request data
 		String subject = request.getParameter("sub");
-		String section = request.getParameter("sec");
+		//String section = request.getParameter("sec");
 		int year = Integer.parseInt(request.getParameter("year"));
 		int semester = Integer.parseInt(request.getParameter("sem"));
 		
