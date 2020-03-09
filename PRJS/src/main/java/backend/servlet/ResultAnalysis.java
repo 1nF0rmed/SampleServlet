@@ -201,8 +201,8 @@ public class ResultAnalysis extends HttpServlet {
 			return;
 		}
 		
-		// Get result documents for sec,year, sem
-		ArrayList<Document> resultsList = dbi.getResults(section, year, semester);
+		// Get result documents for year, sem
+		ArrayList<Document> resultsList = dbi.getResults(year, semester);
 		
 		// Check if no results were found
 		if(resultsList.size()==0) {
