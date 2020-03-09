@@ -66,12 +66,12 @@ public class DatabaseInterface {
 		return "0"; // If not found.
 	}
 	
-	public ArrayList<Document> getResults(String sec, int year, int sem) {
+	public ArrayList<Document> getResults(int year, int sem) {
 		MongoDatabase database = mongoClient.getDatabase("test");
 		MongoCollection<Document> resultCollection = database.getCollection("result");
 		
 		// filter
-		Bson filter = and(eq("Sec", sec), eq("Sem", sem), eq("Year", year));
+		Bson filter = and(eq("Sem", sem), eq("Year", year));
 		
 		// An array to store all the documents
 		ArrayList<Document> filteredResultsArray = new ArrayList();
