@@ -109,19 +109,11 @@
                                           <select name="sem" id="sem"></select>
                                     </div>
                                 </div>
-                                <label class="label">Section</label>
+                               
+                              <label class="label">Subject</label>
                               <div class="control">
                             <div class="select">
-                                  <select name="section" id="section"></select>
-                            </div>
-                              </div>
-
-                              <label class="label">Service Type</label>
-                              <div class="control">
-                            <div class="select">
-                                  <select name="type" id="type">
-									  <option value="police">Police</option>
-									  <option value="hospital">Hospital</option>
+                                  <select name="type" id="subject">
 								  </select>
                             </div>
                               </div>
